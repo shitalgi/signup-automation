@@ -1,0 +1,68 @@
+2026-11-14 05:02:34,368 signup page: http://127.0.0.1:45745/register
+2026-11-14 05:02:38,547 signup page: http://127.0.0.1:45745/signup-basic
+2026-11-14 05:02:39,105 signup page: http://127.0.0.1:45745/signup-mixed
+2026-11-14 05:02:39,643 signup page: http://127.0.0.1:45745/signup-captcha
+2026-11-14 05:02:40,172 signup page: http://127.0.0.1:45745/signup-validation
+2026-11-14 05:02:40,705 signup page: http://127.0.0.1:45745/signup-conflict
+2026-11-14 05:02:41,231 signup page: http://127.0.0.1:45745/signup-500
+2026-11-14 05:02:41,768 signup page: http://127.0.0.1:45745/signup-slow
+2026-11-14 05:02:42,302 signup page: http://127.0.0.1:45745/signup-ratelimit
+2026-11-14 05:02:44,828 [http://127.0.0.1:45745/register] step 1 attempt 1 -> advanced -> http://127.0.0.1:45745/register?step=setup
+2026-11-14 05:02:46,500 [http://127.0.0.1:45745/register] step 2 attempt 1 -> advanced -> http://127.0.0.1:45745/register?step=setup
+2026-11-14 05:02:48,094 [http://127.0.0.1:45745/register] step 3 attempt 1 -> advanced -> http://127.0.0.1:45745/register?step=setup
+2026-11-14 05:02:49,710 [http://127.0.0.1:45745/register] step 4 attempt 1 -> advanced -> http://127.0.0.1:45745/register?step=setup
+2026-11-14 05:02:50,492 [http://127.0.0.1:45745/register] step 5 attempt 1 -> success 
+2026-11-14 05:02:50,557 [http://127.0.0.1:45745/register] => PASSED_PENDING_VERIFICATION (registration accepted; awaiting email/OTP/approval (external step)) in 8.2s
+2026-11-14 05:02:52,028 [http://127.0.0.1:45745/signup-basic] step 1 attempt 1 -> success 
+2026-11-14 05:02:52,083 [http://127.0.0.1:45745/signup-basic] => PASSED (registration confirmed by success message) in 1.5s
+2026-11-14 05:02:53,588 [http://127.0.0.1:45745/signup-mixed] step 1 attempt 1 -> success 
+2026-11-14 05:02:53,620 [http://127.0.0.1:45745/signup-mixed] => PASSED (registration confirmed by success message) in 1.5s
+2026-11-14 05:02:54,230 [http://127.0.0.1:45745/signup-captcha] => BLOCKED_CAPTCHA (CAPTCHA widget present; not bypassed, flow stopped before submit) in 0.6s
+2026-11-14 05:02:55,689 [http://127.0.0.1:45745/signup-validation] step 1 attempt 1 -> errors Phone must start with a country code, e.g. +977...
+2026-11-14 05:02:57,294 [http://127.0.0.1:45745/signup-validation] step 1 attempt 2 -> errors HTTP 422 from /api/signup-validation 
+2026-11-14 05:02:58,087 [http://127.0.0.1:45745/signup-validation] step 1 attempt 3 -> success 
+2026-11-14 05:02:58,124 [http://127.0.0.1:45745/signup-validation] => PASSED (registration confirmed by success message) in 3.9s
+2026-11-14 05:02:59,591 [http://127.0.0.1:45745/signup-conflict] step 1 attempt 1 -> errors This email is already registered.
+2026-11-14 05:02:59,592 email rejected as taken -> new identity qa.signup+39652300f4@example.com
+2026-11-14 05:03:00,386 [http://127.0.0.1:45745/signup-conflict] step 1 attempt 2 -> success 
+2026-11-14 05:03:00,417 [http://127.0.0.1:45745/signup-conflict] => PASSED (registration confirmed by success message) in 2.3s
+2026-11-14 05:03:01,855 [http://127.0.0.1:45745/signup-500] step 1 attempt 1 -> server_error HTTP 500 from /api/signup-500 - page says: Internal error
+2026-11-14 05:03:01,902 [http://127.0.0.1:45745/signup-500] => FAILED_SUBMISSION (HTTP 500 from /api/signup-500 - page says: Internal error) in 1.4s
+2026-11-14 05:03:08,992 [http://127.0.0.1:45745/signup-slow] step 1 attempt 1 -> uncertain submit request sent but no response before timeout; not retried to avoid a duplicate account
+2026-11-14 05:03:09,037 [http://127.0.0.1:45745/signup-slow] => UNCERTAIN (submit request sent but no response before timeout; not retried to avoid a duplicate account) in 7.1s
+2026-11-14 05:03:10,438 [http://127.0.0.1:45745/signup-ratelimit] step 1 attempt 1 -> rate_limited HTTP 429
+2026-11-14 05:03:12,237 [http://127.0.0.1:45745/signup-ratelimit] step 1 attempt 2 -> rate_limited HTTP 429
+2026-11-14 05:03:12,285 [http://127.0.0.1:45745/signup-ratelimit] => BLOCKED_RATE_LIMIT (HTTP 429 twice; stopping (not circumventing)) in 3.2s
+2026-11-14 05:03:12,308 [http://127.0.0.1:45745/register] account already recorded for this target (PASSED_PENDING_VERIFICATION); use --new-account to override
+2026-11-14 05:03:12,308 [http://127.0.0.1:45745/signup-basic] account already recorded for this target (PASSED); use --new-account to override
+2026-11-14 05:03:12,308 [http://127.0.0.1:45745/signup-mixed] account already recorded for this target (PASSED); use --new-account to override
+2026-11-14 05:03:12,918 [http://127.0.0.1:45745/signup-captcha] => BLOCKED_CAPTCHA (CAPTCHA widget present; not bypassed, flow stopped before submit) in 0.6s
+2026-11-14 05:03:12,918 [http://127.0.0.1:45745/signup-validation] account already recorded for this target (PASSED); use --new-account to override
+2026-11-14 05:03:12,919 [http://127.0.0.1:45745/signup-conflict] account already recorded for this target (UNCERTAIN); use --new-account to override
+2026-11-14 05:03:14,353 [http://127.0.0.1:45745/signup-500] step 1 attempt 1 -> server_error HTTP 500 from /api/signup-500 - page says: Internal error
+2026-11-14 05:03:14,398 [http://127.0.0.1:45745/signup-500] => FAILED_SUBMISSION (HTTP 500 from /api/signup-500 - page says: Internal error) in 1.4s
+2026-11-14 05:03:14,398 [http://127.0.0.1:45745/signup-slow] account already recorded for this target (UNCERTAIN); use --new-account to override
+2026-11-14 05:03:15,804 [http://127.0.0.1:45745/signup-ratelimit] step 1 attempt 1 -> rate_limited HTTP 429
+2026-11-14 05:03:17,586 [http://127.0.0.1:45745/signup-ratelimit] step 1 attempt 2 -> rate_limited HTTP 429
+2026-11-14 05:03:17,634 [http://127.0.0.1:45745/signup-ratelimit] => BLOCKED_RATE_LIMIT (HTTP 429 twice; stopping (not circumventing)) in 3.2s
+2026-11-14 05:03:19,109 [http://127.0.0.1:45745/signup-basic] step 1 attempt 1 -> success 
+2026-11-14 05:03:19,168 [http://127.0.0.1:45745/signup-basic] => PASSED (registration confirmed by success message) in 1.5s
+2026-11-14 05:03:19,276 [http://127.0.0.1:45745/does-not-exist] => FAILED_NAVIGATION (page returned HTTP 404) in 0.1s
+2026-11-14 05:03:26,332 [http://127.0.0.1:45745/contact] step 1 attempt 1 -> no_progress 
+2026-11-14 05:03:32,757 [http://127.0.0.1:45745/contact] step 1 attempt 2 -> no_progress 
+2026-11-14 05:03:32,806 [http://127.0.0.1:45745/contact] => FAILED_NO_PROGRESS (page did not progress after 4 attempts (native invalid: [])) in 13.5s
+2026-11-14 10:51:11,707 INFO signup page: https://authorized-partner.vercel.app/register
+2026-11-14 10:51:23,964 INFO signup page: https://authorized-partner.vercel.app/contact-us
+2026-11-14 10:51:25,450 INFO signup page: https://authorized-partner.vercel.app/login
+2026-11-14 10:51:29,739 INFO 3 signup target(s): ['https://authorized-partner.vercel.app/register', 'https://authorized-partner.vercel.app/contact-us', 'https://authorized-partner.vercel.app/login']
+2026-11-14 10:51:34,208 INFO [https://authorized-partner.vercel.app/register] step 1 attempt 1 -> advanced -> https://authorized-partner.vercel.app/register?step=setup
+2026-11-14 10:51:36,822 INFO [https://authorized-partner.vercel.app/register] step 2 attempt 1 -> success 
+2026-11-14 10:51:36,917 INFO [https://authorized-partner.vercel.app/register] => PASSED_PENDING_VERIFICATION (registration accepted; awaiting email/OTP/approval (external step)) in 7.1s
+2026-11-14 10:51:41,079 INFO [https://authorized-partner.vercel.app/contact-us] step 1 attempt 1 -> errors Required
+2026-11-14 10:51:57,959 INFO [https://authorized-partner.vercel.app/contact-us] step 1 attempt 2 -> no_progress 
+2026-11-14 10:51:58,246 INFO [https://authorized-partner.vercel.app/contact-us] => FAILED_VALIDATION (Required) in 21.0s
+2026-11-14 10:52:02,349 INFO [https://authorized-partner.vercel.app/login] step 1 attempt 1 -> errors HTTP 401 from /api/token/create/ No active account found with the given credentials; Notification No active account found with the given credentials
+2026-11-14 10:52:03,933 INFO [https://authorized-partner.vercel.app/login] step 1 attempt 2 -> errors HTTP 401 from /api/token/create/ 
+2026-11-14 10:52:05,930 INFO [https://authorized-partner.vercel.app/login] step 1 attempt 3 -> errors HTTP 401 from /api/token/create/ 
+2026-11-14 10:52:07,928 INFO [https://authorized-partner.vercel.app/login] step 1 attempt 4 -> errors HTTP 401 from /api/token/create/ 
+2026-11-14 10:52:08,028 INFO [https://authorized-partner.vercel.app/login] => FAILED_VALIDATION (No active account found with the given credentials) in 9.7s

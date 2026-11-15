@@ -1,0 +1,4 @@
+reports/screenshots/
+signup_registry.json*
+__pycache__/
+*.pyc

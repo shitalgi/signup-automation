@@ -1,0 +1,186 @@
+{
+  "run_id": "20261114-105101-08f5",
+  "base_url": "https://authorized-partner.vercel.app",
+  "generated": "2026-11-14 10:52:08",
+  "results": [
+    {
+      "target": "https://authorized-partner.vercel.app/register",
+      "status": "PASSED_PENDING_VERIFICATION",
+      "detail": "registration accepted; awaiting email/OTP/approval (external step)",
+      "email": "qa.signup+bb90b5429b@example.com",
+      "final_url": "https://authorized-partner.vercel.app/register?step=setup",
+      "steps": [
+        {
+          "step": 1,
+          "url": "https://authorized-partner.vercel.app/register",
+          "fields": [
+            {
+              "label": "I agree to the Terms of Service and Privacy Policy",
+              "kind": "checkbox",
+              "value": true
+            }
+          ],
+          "attempts": 1,
+          "result": "advanced"
+        },
+        {
+          "step": 2,
+          "url": "https://authorized-partner.vercel.app/register?step=setup",
+          "fields": [
+            {
+              "label": "First Name",
+              "kind": "first_name",
+              "value": "Qa"
+            },
+            {
+              "label": "Last Name",
+              "kind": "last_name",
+              "value": "TesterQssxg"
+            },
+            {
+              "label": "Email Address",
+              "kind": "email",
+              "value": "qa.signup+bb90b5429b@example.com"
+            },
+            {
+              "label": "Phone Number",
+              "kind": "phone",
+              "value": "9896453156"
+            },
+            {
+              "label": "Phone Number",
+              "kind": "phone",
+              "value": "option"
+            },
+            {
+              "label": "Password",
+              "kind": "password",
+              "value": "***"
+            },
+            {
+              "label": "Confirm Password",
+              "kind": "password_confirm",
+              "value": "***"
+            }
+          ],
+          "attempts": 1,
+          "result": "success"
+        }
+      ],
+      "evidence": [
+        "POST /api/tempuser/ -> 201",
+        "confirmation text/URL: 'Verification code'"
+      ],
+      "http": [
+        "POST /register -> 200",
+        "POST /api/tempuser/ -> 201"
+      ],
+      "screenshot": "reports\\screenshots\\register.png",
+      "duration": 7.08,
+      "attempts": 2,
+      "pre_recorded": true,
+      "passed": true
+    },
+    {
+      "target": "https://authorized-partner.vercel.app/contact-us",
+      "status": "FAILED_VALIDATION",
+      "detail": "Required",
+      "email": "qa.signup+73a212f49a@example.com",
+      "final_url": "https://authorized-partner.vercel.app/contact-us",
+      "steps": [
+        {
+          "step": 1,
+          "url": "https://authorized-partner.vercel.app/contact-us",
+          "fields": [
+            {
+              "label": "Full Name",
+              "kind": "last_name",
+              "value": "Tester"
+            },
+            {
+              "label": "Email Address",
+              "kind": "email",
+              "value": "qa.signup.73a212f49a@example.com"
+            },
+            {
+              "label": "Phone Number",
+              "kind": "phone",
+              "value": "9779881567707"
+            },
+            {
+              "label": "Phone Number",
+              "kind": "phone",
+              "value": "option"
+            },
+            {
+              "label": "Message",
+              "kind": "message",
+              "value": "Automated QA test."
+            }
+          ],
+          "attempts": 2,
+          "result": "no_progress",
+          "errors": [
+            "Required"
+          ]
+        }
+      ],
+      "evidence": [],
+      "http": [],
+      "screenshot": "reports\\screenshots\\contact_us.png",
+      "duration": 21.04,
+      "attempts": 2,
+      "pre_recorded": true,
+      "passed": false
+    },
+    {
+      "target": "https://authorized-partner.vercel.app/login",
+      "status": "FAILED_VALIDATION",
+      "detail": "No active account found with the given credentials",
+      "email": "qa.signup+4f79b9e1ff@example.com",
+      "final_url": "https://authorized-partner.vercel.app/login",
+      "steps": [
+        {
+          "step": 1,
+          "url": "https://authorized-partner.vercel.app/login",
+          "fields": [
+            {
+              "label": "Email",
+              "kind": "email",
+              "value": "qa.signup.4f79b9e1ff@example.com"
+            },
+            {
+              "label": "Password",
+              "kind": "password",
+              "value": "***"
+            },
+            {
+              "label": "Remember Me",
+              "kind": "checkbox",
+              "value": true
+            },
+            {
+              "label": "Remember Me",
+              "kind": "checkbox",
+              "value": true
+            }
+          ],
+          "attempts": 4,
+          "result": "errors",
+          "errors": [
+            "No active account found with the given credentials"
+          ]
+        }
+      ],
+      "evidence": [],
+      "http": [
+        "POST /api/token/create/ -> 401"
+      ],
+      "screenshot": "reports\\screenshots\\login.png",
+      "duration": 9.68,
+      "attempts": 4,
+      "pre_recorded": true,
+      "passed": false
+    }
+  ]
+}
